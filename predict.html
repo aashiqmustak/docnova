@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>HEART DISEASE PREDICTION</title>
+    </head>
+    <body>
+        <h1>HEART DISEASE PREDICTION</h1>
+        <form action="/predict" method="post">
+            <label for="age">AGE:</label>
+            <input type="number" name="age" id="age" required>
+            <br>
+            <label for="sex">SEX(1-male ! 0-female):</label>
+            <input type="number" name="sex" id="sex" required>
+            <br>
+            <label for="cp">CHEST PAIN(0-3):</label>
+            <input type="number" name="cp" id="cp" required>
+            <br>
+            <label for="trestbps">RESTING BLOOD PRESSURE (100-200):</label>
+            <input type="number" name="trestbps" id="trestbps" required>
+            <br>
+            <label for="chol">CHOLESTEROL (100-500):</label>
+            <input type="number" name="chol" id="chol" required>
+            <br>
+            <label for="fbs">FASTING BLOOD SUGAR(0 /1) :</label>
+            <input type="number"  name="fbs" id="fbs" required>
+            <br>
+            <label for="restecg">RESTING ECG(0/1):</label>
+            <input type="number" name="restecg" id="restecg" required>
+            <br>
+            <label for="thalach">MAXIMUM HEART RATE ACHIEVED (90 - 200):</label>
+            <input type="number" name="thalach" id="thalach" required>
+            <br>
+            <label for="exang">INDUCED ANGINA (90 - 200):</label>
+            <input type="number" name="exang" id="exang" required>
+            <br>
+            <label for="oldpeak">ST DEPRESSION induced by exercise (0-3):</label>
+            <input type="number" name="oldpeak" id="oldpeak" required>
+            <br>
+            <label for="slope">Slop of the peak exercise ST segment (0-2):</label>
+            <input type="number" name="slope" id="slope" required>
+            <br>
+            <label for="ca">NUMBER OF MAJOR VESSELS(0-3) AFFECTED BY FLUROSCOPY :</label>
+            <input type="number" name="ca" id="ca" required>
+            <br>
+            <label for="thal">Thalassemia (1/2/3)/ :</label>
+            <input type="number" name="thal" id="thal" required>
+            <br>
+            
+
+
+
+            <button type="submit">PREDICT !</button>
+        </form>
+
+        <div>
+            {% if prediction_value %}
+            <p>{{ prediction_value }}</p>
+            {% endif %}
+        </div>
+    </body>
+    </html>

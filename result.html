@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        div {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="heart.jpg" alt="Heart Image">
+    <h1>Diabetes Disease Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required>
+        <br>
+        <label for="sex">Sex (1 - Male, 0 - Female):</label>
+        <input type="number" name="sex" id="sex" required>
+        <br>
+        <label for="cp">Chest Pain (0-3):</label>
+        <input type="number" name="cp" id="cp" required>
+        <br>
+        <label for="trestbps">Resting Blood Pressure (100-200):</label>
+        <input type="number" name="trestbps" id="trestbps" required>
+        <br>
+        <label for="chol">Cholesterol (100-500):</label>
+        <input type="number" name="chol" id="chol" required>
+        <br>
+        <label for="fbs">Fasting Blood Sugar (0 or 1):</label>
+        <input type="number" name="fbs" id="fbs" required>
+        <br>
+        <button type="submit">Predict!</button>
+    </form>
+
+    <div>
+        {% if prediction_value %}
+        <p>{{ prediction_value }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
